@@ -49,6 +49,6 @@ jobs:
           chmod 400 ec2-key.pem
           ssh -i ec2-key.pem -o StrictHostKeyChecking=no ubuntu@18.215.168.182 << 'EOF'
           sudo docker pull mohbaba12/helloworld:latest
-          sudo docker run mohbaba12/helloworld
+          sudo docker run --envfile=.env -p 8080:8080 --name newdevops-container  mohbaba12/helloworld:latest
           EOF
           
