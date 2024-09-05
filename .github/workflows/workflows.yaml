@@ -50,6 +50,6 @@ jobs:
 
           docker pull mohbaba12/helloworld:latest
 
-          docker-compose up --build
+          sudo docker-compose up --build
 
           EOF
