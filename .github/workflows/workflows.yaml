@@ -43,7 +43,7 @@ jobs:
       - name: Run Docker Compose On Instance
         env:
           EC2_INSTANCE_ID: ${{ secrets.EC2_INSTANCE_ID }}
-#          EC2_KEY_PAIR: ${{ secrets.EC2_KEY_PAIR }}
+          EC2_KEY_PAIR: ${{ secrets.EC2_KEY_PAIR }}
         run: |
           echo "${{ secrets.EC2_KEY_PAIR }}" > key.pem
           chmod 400 key.pem
