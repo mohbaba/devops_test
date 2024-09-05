@@ -45,8 +45,8 @@ jobs:
           EC2_INSTANCE_ID: ${{ secrets.EC2_INSTANCE_ID }}
           EC2_KEY_PAIR: ${{ secrets.EC2_KEY_PAIR }}
         run: >
-          chmod 400 ${{ secrets.EC2_KEY_PAIR }}
-          ssh -o StrictHostKeyChecking=no ubuntu@18.215.168.182 << 'EOF'
+          chmod 400 ${{ secrets.EC2_KEY_PAIR }}<< 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@18.215.168.182 
 
           docker pull mohbaba12/helloworld:latest
 
