@@ -47,7 +47,7 @@ jobs:
         run: |
           echo "${{ secrets.EC2_KEY_PAIR }}" > ec2-key.pem
           chmod 400 ec2-key.pem
-            ssh -i ec2-key.pem ubuntu@18.215.168.182 << 'EOF'
+            ssh -i ec2-key.pem ubuntu@18.215.168.182
             sudo docker pull mohbaba12/helloworld:latest
             sudo docker-compose up --build
-          EOF
+          
