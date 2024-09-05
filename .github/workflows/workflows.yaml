@@ -38,13 +38,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      - name: Connect to EC2 Instance
-        uses: aws-actions/amazon-ec2-connect@v1
-        with:
-          instanceId: ${{ secrets.EC2_INSTANCE_ID }}
-          key: ${{ secrets.EC2_KEY_PAIR }}
+
 
       - name: Run Docker Compose On Instance
+        env:
+          ${{ secrets.EC2_INSTANCE_ID }}
+          ${{ secrets.EC2_KEY_PAIR }}
         run: >
           ssh -o StrictHostKeyChecking=no
           ubuntu@ec2-18-215-168-182.compute-1.amazonaws.com << 'EOF'
