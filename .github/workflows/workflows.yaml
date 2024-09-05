@@ -43,6 +43,8 @@ jobs:
         with:
           instanceId: ${{ secrets.EC2_INSTANCE_ID }}
           key: ${{ secrets.EC2_KEY_PAIR }}
+
+      - name: Run Docker Compose On Instance
         run: >
           ssh -o StrictHostKeyChecking=no
           ubuntu@ec2-18-215-168-182.compute-1.amazonaws.com << 'EOF'
