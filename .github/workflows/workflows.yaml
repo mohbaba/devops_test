@@ -56,6 +56,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no ubuntu@ec2-18-215-168-182.compute-1.amazonaws.com << 'EOF'
           docker pull mohbaba12/helloworld:latest
 #          docker stop existing_container || true
-          docker run -p 8080:8080 mohbaba12/helloworld
+          docker-compose up --build
           EOF
 
